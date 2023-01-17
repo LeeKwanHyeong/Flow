@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_flow_graph"
+    app:startDestination="@id/flow_fragment"
+    >
+
+    <fragment
+        android:id="@+id/flow_fragment"
+        android:name="com.example.flow.view.FlowFragment"
+        android:label="flow_fragment"
+        tools:layout="@layout/fragment_flow">
+        <action
+            android:id="@+id/action_flow_fragment_to_flow_recent_searched_fragment"
+            app:destination="@id/flow_recent_searched_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/flow_recent_searched_fragment"
+        android:name="com.example.flow.view.FlowRecentSearchedFragment"
+        android:label="flow_recent_searched_fragment"
+        tools:layout="@layout/fragment_flow_recent_searched">
+
+        <action
+            android:id="@+id/action_flow_recent_searched_fragment_to_flow_fragment"
+            app:destination="@id/flow_fragment"
+            app:popUpTo="@id/flow_recent_searched_fragment"
+            app:popUpToInclusive="true"
+            />
+    </fragment>
+
+</navigation>
